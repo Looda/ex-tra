@@ -1,0 +1,63 @@
+{
+    "app.title": "Ex-Tra",
+    "menu.dashboard": "Dashboard",
+    "menu.records": "Records",
+    "menu.reports": "Reports",
+    "menu.categories": "Categories",
+
+    "login.title": "Sign in",
+    "login.user": "User",
+    "login.password": "Password",
+    "login.rememberMe": "Remember me",
+    "login.signIn": "Sign In",
+    "login.signUpLink": "Don't have an account? Sign Up",
+    "login.errorMessage": "Incorect User or password",
+
+    "signup.title": "Sign up",
+    "signup.user": "User",
+    "signup.password": "Password",
+    "signup.passwordConfirm": "Confirm password",
+    "signup.signUp": "Sign up",
+
+    "dashboard.title": "Dashboard",
+    "dashboard.chart.axis.y": "Money",
+
+    "categories.title": "Categories",
+    "categories.addCategory": "Add Category",
+    "categories.edit": "Edit Category",
+    "categories.remove": "Remove Category",
+
+    "category.addDialog.title": "Add Category",
+    "category.addDialog.name": "Category name",
+
+    "records.title": "Records",
+    "records.addRecord": "Add Record",
+
+    "records.columns.date": "Date",
+    "records.columns.category": "Category",
+    "records.columns.note": "Note",
+    "records.columns.value": "Value",
+    "records.edit": "Edit Record",
+    "records.remove": "Remove Record",
+
+    "record.addDialog.title":"Add Record",
+    "record.addDialog.date":"Date",
+    "record.addDialog.type":"Type",
+    "record.addDialog.category":"Category",
+    "record.addDialog.value":"Value",
+    "record.addDialog.note":"Note",
+
+    "record.type.income":"Income",
+    "record.type.expense":"Expense",
+
+    "userMenu.label": "User menu",
+    "userMenu.logOut": "Logout",
+
+    "common.datetime": "dd.MM.yyyy HH:mm",
+
+    "common.ok": "Ok",
+    "common.save": "Save",
+    "common.cancel": "Cancel",
+
+    "":""
+}
