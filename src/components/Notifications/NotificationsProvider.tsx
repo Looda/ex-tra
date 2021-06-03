@@ -6,12 +6,12 @@ import {
   NotificationsContextValue,
 } from "./types";
 
-const NotificationsContext = React.createContext<
-  Partial<NotificationsContextValue>
->({});
+const NotificationsContext = React.createContext({});
 
 export const useNotifications = () => {
-  const { setAlertMessage } = useContext(NotificationsContext);
+  const { setAlertMessage } = useContext(
+    NotificationsContext
+  ) as NotificationsContextValue;
   return setAlertMessage;
 };
 

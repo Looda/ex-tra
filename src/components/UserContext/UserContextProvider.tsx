@@ -10,7 +10,7 @@ interface UserContextProvider {
   setCurrentUser: (value: string) => void;
 }
 
-const UsersContext = React.createContext<Partial<UserContextProvider>>({});
+const UsersContext = React.createContext({});
 
 export const useUsers = () => {
   const {
@@ -18,29 +18,29 @@ export const useUsers = () => {
     saveUsers,
     currentUser,
     setCurrentUser,
-  } = useContext(UsersContext);
+  } = useContext(UsersContext) as UserContextProvider;
 
   const addUser = (user: string, password: string) => {
-    saveUsers?.({
+    saveUsers({
       ...users,
       [user]: {
         user,
         password: MD5(password).toString(),
       },
     });
-    setCurrentUser?.(user);
+    setCurrentUser(user);
   };
 
   const authUser = (user: string, password: string) => {
-    if (users?.[user]?.password === MD5(password).toString()) {
-      setCurrentUser?.(user);
+    if (users[user]?.password === MD5(password).toString()) {
+      setCurrentUser(user);
       return true;
     }
     return false;
   };
 
   const logOut = () => {
-    setCurrentUser?.("");
+    setCurrentUser("");
   };
 
   return {

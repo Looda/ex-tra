@@ -14,7 +14,7 @@ export enum RECORD_TYPE {
   EXPENSE = "expense",
 }
 
-const RecordsContext = React.createContext<Partial<RecordsContextValue>>({});
+const RecordsContext = React.createContext({});
 
 const getMaxId = (items: { id: number }[]) =>
   items?.length > 0 ? Math.max(...items.map(({ id }) => id ?? 0)) : 0;
@@ -25,10 +25,10 @@ export const useRecords = (userId: string) => {
     saveCategories,
     records = [],
     saveRecords,
-  } = useContext(RecordsContext);
+  } = useContext(RecordsContext) as RecordsContextValue;
 
   const addCategory = (name: string) => {
-    saveCategories?.([
+    saveCategories([
       ...categories,
       {
         id: getMaxId(categories) + 1,
@@ -49,15 +49,15 @@ export const useRecords = (userId: string) => {
       },
       ...categories.slice(index + 1),
     ];
-    saveCategories?.(newCategories);
+    saveCategories(newCategories);
   };
 
   const removeCategory = (id: number) => {
-    saveCategories?.(categories.filter((category) => category.id !== id));
+    saveCategories(categories.filter((category) => category.id !== id));
   };
 
   const addRecord = (record: Partial<Record>) => {
-    saveRecords?.([
+    saveRecords([
       ...records,
       {
         id: getMaxId(records) + 1,
@@ -77,11 +77,11 @@ export const useRecords = (userId: string) => {
       },
       ...records.slice(index + 1),
     ];
-    saveRecords?.(newRecords);
+    saveRecords(newRecords);
   };
 
   const removeRecord = (id: number) => {
-    saveRecords?.(records.filter((record) => record.id !== id));
+    saveRecords(records.filter((record) => record.id !== id));
   };
 
   return {
